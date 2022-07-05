@@ -11,9 +11,6 @@
 		"build": "node build.js",
 		"help" : "node help.js"
     },
-	"engines":{
-		"node":"16.13.2"
-	},
     "dependencies": {
 		"chalk": "4.1.2",
         "fs-extra": "10.1.0",

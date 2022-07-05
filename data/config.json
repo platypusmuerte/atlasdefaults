@@ -3,6 +3,7 @@
 		"source":"Game.ini",
 		"targetfile":"Game.ini",
 		"gridfolderspath":"D:/testgrid",
+		"merge": true,
 		"folderstoignore":["Logs","SaveGames","A2","B1","B2","B3"]
 	}
 ]

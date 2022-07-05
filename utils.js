@@ -37,36 +37,15 @@ class Utils {
 
 	getSrc({src = false}) {
 		let file = path.join('./','/data/' + src);
-		let buffer = new Buffer.alloc(1024);
-		let srcContents = false;
 
 		return new Promise((resolve, reject)=>{
-			fse.open(file, 'r', (err, fd) => {
-				if(err) {
-					this.log({msg:"[ERROR] Failed to open source " + err});
-				}
-
-				fse.read(fd, buffer, 0, buffer.length, 0, (err, bytes)=>{
-					if (err) {
-						this.log({msg:"[ERROR] Failed to read source " + err});
-					}
-		
-					if (bytes > 0) {
-						srcContents = buffer.slice(0, bytes).toString();
-					}
-
-					fse.close(fd, function (err) {
-						if (err) {
-							this.log({msg:"[ERROR] Failed to close source " + err});
-						}
-					});
-
-					resolve(srcContents);
-				});
-			});
-		});
-
-		
+			if(fse.pathExistsSync(file) && fse.statSync(file).isFile()) {
+				resolve(fse.readFileSync(file, 'utf-8'));
+			} else {
+				this.log({msg:"[ERROR] Source file does not exist " + src});
+				reject();
+			}
+		});		
 	}
 
 	confirmPath({filepath = false}) {
