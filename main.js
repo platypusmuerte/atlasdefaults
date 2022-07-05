@@ -1,3 +1,6 @@
+process.removeAllListeners('warning');
+/* to prevent annoying DeprecationWarning: Invalid 'main' field in 'D:\projects\js\atlasdefaults\node_modules\ini-api\package.json' of './dist/index.js'. */
+
 const { Utils } = require('./utils');
 const { ConfigWriter } = require('./configwriter');
 

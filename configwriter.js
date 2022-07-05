@@ -1,5 +1,6 @@
 const fse = require('fs-extra');
 const path = require('path');
+const {Ini} = require('ini-api');
 
 class ConfigWriter {
 	constructor({src = "", config = {}, utils = {}} = {}) {
@@ -33,13 +34,22 @@ class ConfigWriter {
 					if(!this.isIgnoredFolder(f) && fse.pathExistsSync(targetPath) && fse.statSync(targetPath).isFile()) {
 						this.utils.log({msg:"Updating " + f + " " + this.config.targetfile});
 
-						status = (this.utils.writeToFile({file: targetPath, contents: this.srcContent})) ? status:false;
+						let fileContents = (this.config.merge) ? this.mergeFiles({srcContent: this.srcContent, targetPath: targetPath}):this.srcContent;
+
+						status = (this.utils.writeToFile({file: targetPath, contents: fileContents})) ? status:false;						
 					}
 				}
 			});
 
 			resolve(status);
 		});		
+	}
+
+	mergeFiles({srcContent = "", targetPath = ""}) {
+		let existingConfig = new Ini(fse.readFileSync(targetPath).toString());
+		let newConfig = new Ini(srcContent);
+
+		return Ini.merge(existingConfig,newConfig).stringify();
 	}
 
 	isIgnoredFolder(f) {
