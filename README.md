@@ -1,5 +1,5 @@
 # atlasdefaults
-This will overwrite Atlas server files in the ShooterGame/Saved directory. Its intention is to simplify the process of updating a Game.ini in each of the grids, as the DefaultGame.ini should not be used.
+This will overwrite or update Atlas server files in the ShooterGame/Saved directory. Its intention is to simplify the process of updating a Game.ini in each of the grids, as the DefaultGame.ini should not be used.
 
 ## Usage
 **npm install**
@@ -17,4 +17,5 @@ node main.js**
 Runs the app
 
 ## Config and Source Files
-Create a data dir in app root, and add a config.json file, and any source files as explained in help. (if not already present)
+Create a data dir in app root, and add a config.json file, and any source files as explained in help. (if not already present)  
+To update/append existing ini data, use merge: true in each config.
