@@ -19,3 +19,6 @@ Runs the app
 ## Config and Source Files
 Create a data dir in app root, and add a config.json file, and any source files as explained in help. (if not already present)  
 To update/append existing ini data, use merge: true in each config.
+
+## Known Issues
+Comments are removed when merging. They were being duplicated by the ini-api module.

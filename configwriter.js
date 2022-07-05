@@ -49,7 +49,7 @@ class ConfigWriter {
 		let existingConfig = new Ini(fse.readFileSync(targetPath).toString());
 		let newConfig = new Ini(srcContent);
 
-		return Ini.merge(existingConfig,newConfig).stringify();
+		return Ini.merge(existingConfig,newConfig).stringify({removeCommentLines: true});
 	}
 
 	isIgnoredFolder(f) {
