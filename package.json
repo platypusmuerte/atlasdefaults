@@ -1,0 +1,20 @@
+{
+    "name": "atlasdefaults",
+    "productName": "atlasdefaults",
+    "version": "1.0.0",
+    "description": "App to write default values to grid files",
+    "main": "main.js",
+    "author": "PlatypusMuerte",
+    "license": "unlicense",
+    "scripts": {
+        "start": "node main.js",
+		"build": "node build.js"
+    },
+	"engines":{
+		"node":"16.13.2"
+	},
+    "dependencies": {
+		"chalk": "4.1.2",
+        "fs-extra": "10.1.0"
+    }
+}
