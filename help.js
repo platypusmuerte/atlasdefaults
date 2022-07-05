@@ -18,7 +18,7 @@ utils.line();
 
 utils.log({msg:"Your config belongs in the data folder, at the root of the app."});
 utils.log({msg:"The data folder should contain a config.json file (explained below) and any files with the source content to update the target files with."});
-utils.log({msg:"You will need to create these initially."});
+utils.log({msg:"You may need to create these initially, unless example defaults exist already."});
 utils.line();
 
 utils.log({msg:"Example config.json file:"});
