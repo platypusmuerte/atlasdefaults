@@ -30,7 +30,7 @@ class ConfigWriter {
 				} else {
 					let targetPath = path.join(this.config.gridfolderspath,f,'/Config/WindowsServer/' + this.config.targetfile);
 
-					if(!this.isIgnoredFolder(f) && fse.statSync(targetPath).isFile()) {
+					if(!this.isIgnoredFolder(f) && fse.pathExistsSync(targetPath) && fse.statSync(targetPath).isFile()) {
 						this.utils.log({msg:"Updating " + f + " " + this.config.targetfile});
 
 						status = (this.utils.writeToFile({file: targetPath, contents: this.srcContent})) ? status:false;
