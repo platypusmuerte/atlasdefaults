@@ -49,8 +49,6 @@ class ConfigWriter {
 		let existingConfig = new Ini(fse.readFileSync(targetPath).toString());
 		let newConfig = new Ini(srcContent);
 
-		console.log(srcContent);
-
 		return Ini.merge(existingConfig,newConfig).stringify();
 	}
 
