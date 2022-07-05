@@ -5,11 +5,22 @@ const path = require('path');
 
 class Utils {
 	constructor({} = {}) {
-		//this.buffer = new Buffer.alloc(1024);
+		this.exampleconfig = [
+			{
+				"source":"Game.ini", /* apppath/data/ - the contents of this file will replace the targetfile */
+				"targetfile":"Game.ini", /* Game.ini, Engine.ini, or what ever file you intend to update */
+				"gridfolderspath":"D:/path/to/shootergame/saved/folder", /* path to your server installation ShooterGame/Saved folder (folder with all the grids in them) */
+				"folderstoignore":["A2","B1","B2","B7"] /* these folders will be skipped */
+			}
+		];
 	}
 
 	log({msg = "", color = "#ff9900"}) {
 		console.log(chalk.hex(color)(msg));
+	}
+
+	line() {
+		console.log(" ");
 	}
 
 	getConfig() {

@@ -8,7 +8,8 @@
     "license": "unlicense",
     "scripts": {
         "start": "node main.js",
-		"build": "node build.js"
+		"build": "node build.js",
+		"help" : "node help.js"
     },
 	"engines":{
 		"node":"16.13.2"

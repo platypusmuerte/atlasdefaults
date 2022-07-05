@@ -11,8 +11,6 @@ utils.log({msg:"[LOADING]"});
 
 config = utils.getConfig();
 
-console.log(config);
-
 
 config.forEach((config)=>{
 	utils.log({msg:"Processing Config for " + config.source});
@@ -27,5 +25,7 @@ config.forEach((config)=>{
 				utils.log({msg:"[ERROR] Failed to find grid folders path " + config.gridfolderspath});
 			}
 		}
-	});	
+	});
+
+	utils.log({msg:" "});
 });
