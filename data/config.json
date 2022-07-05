@@ -1,0 +1,8 @@
+[
+	{
+		"source":"Game.ini",
+		"targetfile":"Game.ini",
+		"gridfolderspath":"D:/testgrid",
+		"folderstoignore":["Logs","saveGames","A2","B1","B2","B3"]
+	}
+]
